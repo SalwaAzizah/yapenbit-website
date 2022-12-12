@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background random</title>
+</head>
+<body>
+    <div class="container">
+        <h1>bg color : <span class="color">blue</span></h1>
+        <button id="btn">klik me</button>
+    </div>
+    <script>
+        const warna =["red", "blue","grey", "aqua", "purple", "pink", "black", "green", "yellow"];
+        const btn = document.getElementById("btn");
+        const color = document.querySelector('.color');
+        function randomcolor() {
+            return Math.floor(Math.random() * warna.length);
+        }
+        console.log('randomcolor:', randomcolor());
+        btn.addEventListener('click', function(){
+            const warnarandom=randomcolor();
+           
+            document.body.style.backgroundColor =warna[warnarandom];
+            color.textContent=warna[warnarandom];
+        });
+    </script>
+</body>
+</html>
